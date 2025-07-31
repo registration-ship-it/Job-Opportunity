@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Caregiver Job Registration</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad390, #a1c4fd, #c2e9fb);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px;
+      color: #333;
+    }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .wrapper {
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    header h1 {
+      font-size: 40px;
+      font-family: 'Times New Roman', serif;
+      font-weight: 900;  /* extra bold */
+      margin: 0;
+      background: linear-gradient(90deg,#ff512f,#dd2476,#36d1dc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 3s infinite linear;
+      background-size: 200% auto;
+    }
+    @keyframes shine {
+      to { background-position: 200% center; }
+    }
+    header p {
+      font-size: 18px;
+      margin-top: 8px;
+      color: #444;
+      font-family: 'Times New Roman', serif;
+      font-weight: bold;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 18px;
+      padding: 25px 35px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #dd2476;
+      border-left: 6px solid #ff512f;
+      padding-left: 10px;
+      font-family: 'Times New Roman', serif;
+      font-weight: 800;
+    }
+
+    ul li {
+      margin: 6px 0;
+      line-height: 1.6;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+    table th {
+      background: linear-gradient(90deg,#36d1dc,#5b86e5);
+      color: white;
+      font-weight: 600;
+      font-family: 'Times New Roman', serif;
+    }
+
+    .note {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #e74c3c;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 10px;
+    }
+    .input-group {
+      position: relative;
+    }
+    .input-group span {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      color: #999;
+    }
+    form input {
+      width: 100%;
+      padding: 14px 14px 14px 42px;
+      border: none;
+      border-radius: 14px;
+      font-size: 15px;
+      background: rgba(255,255,255,0.8);
+      box-shadow: inset 2px 2px 6px rgba(0,0,0,0.1),
+                  inset -2px -2px 6px rgba(255,255,255,0.8);
+      outline: none;
+      transition: 0.3s;
+    }
+    form input::placeholder {
+      color: #888;
+      font-style: italic;
+    }
+    form input:focus {
+      background: #fff;
+      box-shadow: 0 0 10px rgba(255,81,47,0.4);
+      border: 1px solid #ff512f;
+    }
+
+    button {
+      grid-column: span 2;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background: linear-gradient(145deg,#ff512f,#dd2476,#36d1dc);
+      background-size: 200% auto;
+      color: white;
+      transition: all 0.4s;
+    }
+    button:hover {
+      background-position: right center;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #222;
+      font-weight: 500;
+      background: linear-gradient(90deg,#ff9a9e,#fad390,#a1c4fd);
+      padding: 12px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      font-family: 'Times New Roman', serif;
+    }
+  </style>
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      alert("✅ Registration submitted successfully!");
+      document.getElementById("registrationForm").reset();
+    }
+  </script>
+</head>
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1>🌍 Overseas Job Opportunity</h1>
+      <p>Home Based Caregiver – Israel (Protocol B)</p>
+    </header>
+
+    <div class="card">
+      <h2>📌 Job Description</h2>
+      <ul>
+        <li><b>Location:</b> Israel</li>
+        <li><b>Job Role:</b> Home Based Caregiver</li>
+        <li><b>No. of Demands:</b> 5000</li>
+        <li><b>Gender:</b> Female (90%) / Male (10%)</li>
+        <li><b>Age Limit:</b> 25–45 years</li>
+        <li><b>Qualification:</b> Minimum 10th Pass</li>
+        <li><b>Experience:</b> Nursing/Physiotherapy/ANM/GNM/BSc Nursing</li>
+        <li><b>Passport Validity:</b> Minimum 3 years</li>
+        <li><b>Salary:</b> 1870 USD (~ ₹1,61,586/month)</li>
+        <li><b>Working Days:</b> 6 days/week</li>
+        <li><b>Accommodation & Food:</b> Provided by Employer</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>💰 Expenses (50% Govt Support)</h2>
+      <table>
+        <tr><th>Content</th><th>Total Cost</th><th>Candidate Pays (50%)</th></tr>
+        <tr><td>NSDC Registration + Orientation</td><td>₹10,364 + GST</td><td>₹5,182 + GST</td></tr>
+        <tr><td>Medical Exam</td><td>₹5,700</td><td>₹2,850</td></tr>
+        <tr><td>Police Report</td><td>₹518</td><td>₹259</td></tr>
+        <tr><td>Passport Fee</td><td>₹2,072</td><td>₹1,036</td></tr>
+        <tr><td>Visa Fee</td><td>₹3,836</td><td>₹1,918</td></tr>
+        <tr><td>Video Interview Upload</td><td>₹4,318 + GST</td><td>₹2,159 + GST</td></tr>
+        <tr><td><b>Total Before Travel</b></td><td><b>₹1,12,172 + Flight</b></td><td><b>₹56,086 + Flight</b></td></tr>
+      </table>
+      <p class="note">⚠️ Government will provide 50% support, candidate pays remaining 50%.</p>
+    </div>
+
+    <div class="card">
+      <h2>📝 Candidate Registration Form</h2>
+      <form id="registrationForm" onsubmit="submitForm(event)">
+        <div class="input-group">
+          <span>👤</span>
+          <input type="text" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="input-group">
+          <span>✉️</span>
+          <input type="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="input-group">
+          <span>📱</span>
+          <input type="text" name="phone" placeholder="Enter phone number" required>
+        </div>
+        <div class="input-group">
+          <span>📍</span>
+          <input type="text" name="district" placeholder="Enter district" required>
+        </div>
+        <div class="input-group">
+          <span>🎓</span>
+          <input type="text" name="qualification" placeholder="Your qualification" required>
+        </div>
+        <div class="input-group">
+          <span>💼</span>
+          <input type="text" name="experience" placeholder="Work experience" required>
+        </div>
+        <button type="submit">✨ Submit Application ✨</button>
+      </form>
+    </div>
+
+    <footer>
+      📢 Selection and rejection decisions will be made exclusively by the Israeli employer.  
+      NSDC is the sole facilitator.
+    </footer>
+  </div>
+
+</body>
+</html>
